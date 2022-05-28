@@ -1,6 +1,7 @@
 
 const theatreController = require("../controllers/theatre.controller")
 const {verifyTheatre} = require("../middlewares");
+const verifyMovie = require("../middlewares/movie.middleware");
 
 /**
  * Defining the routes for the theatre resource
@@ -32,13 +33,13 @@ module.exports = (app) => {
      
 
      //Add/Remove  movies inside a theatre
-     app.put("/mba/api/v1/theatres/:id/movies",[], somecontroller.addMoviesToATheatres);
+     app.put("/mba/api/v1/theatres/:id/movies",[verifyTheatre.isValidTheatreId,verifyMovie.isValidMovieId], theatreController.addMoviesToATheatres);
 
      //Get all the movies inside a theatre
-     app.get("/mba/api/v1/theatres/:id/movies", someContoller.getMoviesInsideATheatre);
+//      app.get("/mba/api/v1/theatres/:id/movies", someContoller.getMoviesInsideATheatre);
     
-     //Get a specific movie inside a theatre
-     app.get("/mba/api/v1/theatres/:theatreId/movies/:movieId", someContoller.getMoviesInsideATheatreBasedOnId);
+//      //Get a specific movie inside a theatre
+//      app.get("/mba/api/v1/theatres/:theatreId/movies/:movieId", someContoller.getMoviesInsideATheatreBasedOnId);
      
 
      /**

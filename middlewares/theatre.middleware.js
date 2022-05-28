@@ -21,7 +21,7 @@ const isValidTheatreId = async (req,res, next) =>{
                 message: "Theatre doesn't exist"
             })
         }
-        
+
         next();
     } catch (err) {
         console.log(err.message);
@@ -59,7 +59,11 @@ const verifyAddTheatre = async (req,res, next) =>{
                 message: "Theatre Total Seats is required"
             })
         }
-
+        else if(!req.body.movies || req.body.movies == []){
+            return res.status(400).send({
+                message: "Movies in Theatre is required"
+            })
+        }
         next();
     } catch (err) {
         console.log(err.message);

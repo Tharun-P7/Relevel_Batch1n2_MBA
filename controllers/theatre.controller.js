@@ -2,6 +2,7 @@
  * This file will contain the logic for theatre controller
  */
  const Theatre = require("../models/theatre.model");
+ const Movie = require("../models/movie.model")
 
  /**
   * Getting all the theatres
@@ -128,6 +129,28 @@
          console.log(err.message);
          return res.status(500).send({
              message: "Some internal error"
+         })
+     }
+ }
+
+ exports.addMoviesToATheatres =async(req,res) =>{
+     try{
+        const theatremovies = await Theatre.findOne({
+            _id : req.params.id 
+        })
+        console.log(theatremovies,"Hello");
+        const movieintheatre = await Movie.findOne({
+            name : req.params.name
+        })
+        theatremovies[movies].push(movieintheatre);
+        
+        return res.status(200).send({
+            message : "Added the movie to theatre"
+        })
+     }catch(err){
+         console.log(err.message)
+         return res.status(500).send({
+             message : "Error while adding the movie"
          })
      }
  }
