@@ -33,7 +33,7 @@ module.exports = (app) => {
      
 
      //Add/Remove  movies inside a theatre
-     app.put("/mba/api/v1/theatres/:id/movies",[verifyTheatre.isValidTheatreId,verifyMovie.isValidMovieId], theatreController.addMoviesToATheatres);
+     app.put("/mba/api/v1/theatres/:id/:movies",[verifyTheatre.isValidTheatreId,verifyMovie.isValidMovieId], theatreController.addMoviesToATheatres);
 
      //Get all the movies inside a theatre
 //      app.get("/mba/api/v1/theatres/:id/movies", someContoller.getMoviesInsideATheatre);

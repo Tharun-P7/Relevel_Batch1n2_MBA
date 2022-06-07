@@ -1,5 +1,5 @@
 const movieController = require("../controllers/movie.controller")
-
+const movieMiddleware = require("../middlewares/movie.middleware")
 
 
 module.exports = (app)=>{
@@ -9,7 +9,7 @@ module.exports = (app)=>{
      * Create the routes for the corresponding controllers
      */
     // CREATE CALL
-    app.post("/mba/api/v1/movies",  movieController.addMovie);
+    app.post("/mba/api/v1/movies",[movieMiddleware.verifyAddMovie],  movieController.addMovie);
 
     // UPDATE CALL
     app.put("/mba/api/v1/movies/:id", movieController.updateMovie);

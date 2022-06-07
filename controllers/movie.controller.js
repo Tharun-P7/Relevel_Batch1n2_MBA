@@ -72,10 +72,7 @@ exports.getAllMovies = async ( req, res) => {
         cast: req.body.cast,
         director: req.body.director,
         trailerUrls: req.body.trailerUrls,
-        posterUrls: req.body.posterUrls,
-        language: req.body.language,
-        releaseDate: req.body.releaseDate,
-        imdbRating: req.body.imdbRating
+        posterUrls: req.body.posterUrls
     }
 
     try {

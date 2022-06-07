@@ -13,8 +13,8 @@ app.use(express.json());
 mongoose.connect(DB_URL, async ()=>{
     console.log(`Application is connected to database: ${DB_URL}`);
     
-    await Movie.collection.drop();
-    await Theatre.collection.drop();
+    // await Movie.collection.drop();
+    // await Theatre.collection.drop();
 
     try{
     // create movies here
@@ -27,7 +27,7 @@ mongoose.connect(DB_URL, async ()=>{
         posterUrls:"xyz123.in",
         releaseDate: "05-25-2022"
     })
-    console.log(movie1);
+    // console.log(movie1);
     const movie2 = await Movie.create({
         name: "Puspa 2",
         description:"This is south indian movie.",
@@ -37,7 +37,7 @@ mongoose.connect(DB_URL, async ()=>{
         posterUrls:"xyz123.in",
         releaseDate: "03-25-2022"
     })
-    console.log(movie2);
+    // console.log(movie2);
     const movie3 = await Movie.create({
         name: "RRR",
         description:"This is south indian movie.",
@@ -47,7 +47,7 @@ mongoose.connect(DB_URL, async ()=>{
         posterUrls:"xyz123.in",
         releaseDate: "02-25-2022"
     })
-    console.log(movie3);
+    // console.log(movie3);
     const movie4 = await Movie.create({
         name: "SHAHO",
         description:"This is south indian movie.",
@@ -57,7 +57,7 @@ mongoose.connect(DB_URL, async ()=>{
         posterUrls:"xyz123.in",
         releaseDate: "01-25-2022"
     })
-    console.log(movie4);
+    // console.log(movie4);
     const movie5 = await Movie.create({
         name: "BEAST",
         description:"This is south indian movie.",
@@ -67,7 +67,7 @@ mongoose.connect(DB_URL, async ()=>{
         posterUrls:"xyz123.in",
         releaseDate: "06-25-2022"
     })
-    console.log(movie5);
+    // console.log(movie5);
 
    }catch(err){
        console.log(err.message);
@@ -84,7 +84,7 @@ mongoose.connect(DB_URL, async ()=>{
         totalSeats : 100
 
     })
-    console.log(theatre1);
+    // console.log(theatre1);
 
     
     const theatre2 = await Theatre.create({
@@ -95,7 +95,7 @@ mongoose.connect(DB_URL, async ()=>{
         totalSeats : 100
 
     })
-    console.log(theatre2);
+    // console.log(theatre2);
 
     
     const theatre3 = await Theatre.create({
@@ -106,7 +106,7 @@ mongoose.connect(DB_URL, async ()=>{
         totalSeats : 100
 
     })
-    console.log(theatre3);
+    // console.log(theatre3);
 
     
     const theatre4 = await Theatre.create({
@@ -117,7 +117,7 @@ mongoose.connect(DB_URL, async ()=>{
         totalSeats : 100
 
     })
-    console.log(theatre4);
+    // console.log(theatre4);
 
     const theatre5 = await Theatre.create({
         name : "PVR",
@@ -127,7 +127,7 @@ mongoose.connect(DB_URL, async ()=>{
         totalSeats : 100
 
     })
-    console.log(theatre5);
+    // console.log(theatre5);s
 }catch(err){
     console.log(err.message);
 }

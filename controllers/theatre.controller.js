@@ -60,7 +60,7 @@
         description : req.body.description,
         city : req.body.city,
         pinCode : req.body.pinCode,
-        totalSeats : req.body.totalSeats
+        totalSeats : req.body.totalSeats,
      }
  
      try {

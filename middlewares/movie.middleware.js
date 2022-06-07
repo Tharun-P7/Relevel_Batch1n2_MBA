@@ -21,7 +21,7 @@ const isValidMovieId = async (req,res, next) =>{
                 message: "Movie doesn't exist"
             })
         }
-        
+        console.log("Middleware has touched")
         next();
     } catch (err) {
         console.log(err.message);
@@ -62,13 +62,8 @@ const verifyAddMovie = async (req,res, next) =>{
                 return res.status(400).send({
                     message: "Movie posterUrls is required"
                 })
-        }
-        else if(!req.body.releaseStatus || req.body.releaseStatus == []){
-            return res.status(400).send({
-                message: "Movie posterUrls is required"
-            })
-    }
-    next();
+            }
+        next();
     } catch (err) {
         console.log(err.message);
         return res.status(500).send({
@@ -81,4 +76,5 @@ const verifyMovie = {
     isValidMovieId : isValidMovieId,
     verifyAddMovie : verifyAddMovie
 };
+console.log("Hello");
 module.exports= verifyMovie;
