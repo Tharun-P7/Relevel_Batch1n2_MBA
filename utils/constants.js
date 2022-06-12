@@ -12,5 +12,11 @@ module.exports = {
         hindi: "HINDI",
         english:"ENGLISH",
         tamil:"TAMIL"
+    },
+    bookingStatus : {
+        in_progress : "IN_PROGRESS",
+        completed : "COMPLETED" ,
+        cancelled : "CANCELLED",
+        failed : "FAILED"
     }
 };

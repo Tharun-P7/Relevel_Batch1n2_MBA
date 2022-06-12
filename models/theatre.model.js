@@ -43,6 +43,9 @@ const theatreSchema = new mongoose.Schema({
     owner: {
         type: mongoose.SchemaTypes.ObjectId,
         ref: "User"
+    },
+    ticketPrice : {
+        type : Number
     }
 });
 
